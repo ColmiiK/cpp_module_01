@@ -6,7 +6,7 @@
 /*   By: alvega-g <alvega-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 12:43:31 by alvega-g          #+#    #+#             */
-/*   Updated: 2024/03/18 13:30:24 by alvega-g         ###   ########.fr       */
+/*   Updated: 2024/03/19 11:38:50 by alvega-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,14 @@
 
 int main( void ){
 	std::string string = "HI THIS IS BRAIN";
+	std::string *stringPTR = &string;
+	std::string &stringREF = string;
 	
+	std::cout << "String -> " << &string << std::endl;
+	std::cout << "Pointer -> " << &stringPTR << std::endl;
+	std::cout << "Reference -> " << &stringREF << std::endl;
+
+	std::cout << "String -> " << string << std::endl;
+	std::cout << "Pointer -> " << stringPTR << std::endl;
+	std::cout << "Reference -> " << stringREF << std::endl;
 }
