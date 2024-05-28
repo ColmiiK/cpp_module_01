@@ -6,17 +6,14 @@
 /*   By: alvega-g <alvega-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 13:23:28 by alvega-g          #+#    #+#             */
-/*   Updated: 2024/03/20 16:13:43 by alvega-g         ###   ########.fr       */
+/*   Updated: 2024/05/28 16:23:23 by alvega-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <Harl.hpp>
 
 Harl::Harl( void ) {
-	mapFunc["DEBUG"] = &Harl::debug;
-	mapFunc["INFO"] = &Harl::info;
-	mapFunc["WARNING"] = &Harl::warning;
-	mapFunc["ERROR"] = &Harl::error;
+	std::cout << "Harl object created" << std::endl;
 }
 
 Harl::~Harl( void ) {
@@ -40,5 +37,22 @@ void Harl::error( void ) {
 }
 
 void Harl::complain( std::string level ) {
-	(this->*mapFunc[level])();
+	void (Harl::*ptr_complain[4])(void) = {
+		&Harl::debug,
+		&Harl::info,
+		&Harl::warning,
+		&Harl::error,
+	};
+	std::string complains[4] = {
+		"DEBUG",
+		"INFO",
+		"WARNING",
+		"ERROR",
+	};
+	
+	for (int i = 0; i < 4; i++) {
+		if (complains[i] == level){
+			(this->*ptr_complain[i])();
+		}
+	}
 }

@@ -6,7 +6,7 @@
 /*   By: alvega-g <alvega-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 15:35:51 by alvega-g          #+#    #+#             */
-/*   Updated: 2024/03/20 13:07:58 by alvega-g         ###   ########.fr       */
+/*   Updated: 2024/05/28 16:10:44 by alvega-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,9 @@ int printError(std::string msg){
 int openCopyFile(std::string &original, std::ifstream &file){
 	std::string line;
 	
+
 	if (file.is_open()){
-		while (std::getline(file, line)){
+		while (std::getline(file, line)){			
 			original += line + '\n';
 		}
 		file.close();

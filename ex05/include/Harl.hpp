@@ -6,7 +6,7 @@
 /*   By: alvega-g <alvega-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 13:11:31 by alvega-g          #+#    #+#             */
-/*   Updated: 2024/03/20 16:14:09 by alvega-g         ###   ########.fr       */
+/*   Updated: 2024/05/28 16:18:21 by alvega-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 # include <string>
 # include <iostream>
-# include <map>
 
 class Harl {
 	private:
@@ -23,8 +22,6 @@ class Harl {
 		void info( void );
 		void warning( void );
 		void error( void );
-		typedef void (Harl::*ptrFunc)( void );
-		std::map<std::string, ptrFunc> mapFunc;
 	public:
 		Harl( void );
 		~Harl( void );
